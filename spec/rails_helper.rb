@@ -51,6 +51,7 @@ RSpec.configure do |config|
 
   # add `RequestSpecHelper` methods
   config.include RequestSpecHelper, type: :request
+  config.include ControllerSpecHelper
 
   # start by truncating all the tables but then use the faster transaction
   # strategy the rest of the time.

@@ -5,11 +5,16 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+ruby '2.5.0'
+
 gem 'rails', '~> 5.1.5'
 gem 'puma', '~> 3.7'
 gem 'pg'
 
 gem 'rack-cors'
+
+gem 'bcrypt', '~> 3.1.7'
+gem 'jwt'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
