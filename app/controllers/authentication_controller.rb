@@ -1,19 +1,25 @@
 class AuthenticationController < ApplicationController
-  skip_before_action :authorize_request, only: :authenticate
+  skip_before_action :authorize_request, only: [:authenticate, :facebook]
 
   def authenticate
-    auth_token =
+    payload =
       AuthenticateUser.new(
         auth_params[:email],
         auth_params[:password]
       ).call
 
-    json_response(auth_token: auth_token)
+    json_response(payload)
+  end
+
+  def facebook
+    payload = AuthenticateFacebook.new(auth_params[:access_code]).call
+
+    json_response(payload)
   end
 
   private
 
   def auth_params
-    params.permit(:email, :password)
+    params.permit(:email, :password, :access_code)
   end
 end

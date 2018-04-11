@@ -1,0 +1,156 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/me?access_token=EAAOBf4WLaNsBAB7bEJDkZANJ1GcuGBc5LkEXW7DYCeMimzzSADDw0o2Cv2yPLbeusI79Qlec2fuBtIZCoYGIZCZAP7IJvqj2lBblSxjpLqC2mY7imXhaEy43cPGD9KjHK56UKQuwJABKvm7GZA9KiwzQNWZAbQEd2gxR6er0uDZCNgJTC68f0zZAWxFsoZBpY0CDLAHgtKq7RRI9kl5ZCJ8aTwV4UHX5JRUejZBaRQr7QrqaQZDZD&appsecret_proof=0ebf54d6b21abd85a41fc8f928c731329de1142199eb14e472c74f25cd2e228e
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - '"90211aec91e09a418a1849691fb07d80a5c501e2"'
+      Strict-Transport-Security:
+      - max-age=15552000; preload
+      X-Fb-Trace-Id:
+      - FVxbyY45qPV
+      X-Fb-Rev:
+      - '3803058'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Facebook-Api-Version:
+      - v2.12
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Debug:
+      - bzPGUabmcybWg/74D6K0IMnwAfQ9a1r5qP3Bw5WPdkfbDcyYrU7hbrszy4G2AfcZzZfQ48N3dRHkYHgAsHJtFw==
+      Date:
+      - Wed, 11 Apr 2018 18:21:09 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '54'
+    body:
+      encoding: UTF-8
+      string: '{"name":"Open Graph Test User","id":"131637811018008"}'
+    http_version: 
+  recorded_at: Wed, 11 Apr 2018 18:21:09 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/me?access_token=EAAOBf4WLaNsBAB7bEJDkZANJ1GcuGBc5LkEXW7DYCeMimzzSADDw0o2Cv2yPLbeusI79Qlec2fuBtIZCoYGIZCZAP7IJvqj2lBblSxjpLqC2mY7imXhaEy43cPGD9KjHK56UKQuwJABKvm7GZA9KiwzQNWZAbQEd2gxR6er0uDZCNgJTC68f0zZAWxFsoZBpY0CDLAHgtKq7RRI9kl5ZCJ8aTwV4UHX5JRUejZBaRQr7QrqaQZDZD&appsecret_proof=0ebf54d6b21abd85a41fc8f928c731329de1142199eb14e472c74f25cd2e228e
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - '"90211aec91e09a418a1849691fb07d80a5c501e2"'
+      Strict-Transport-Security:
+      - max-age=15552000; preload
+      X-Fb-Trace-Id:
+      - BjCsil3o7Ca
+      X-Fb-Rev:
+      - '3803058'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Facebook-Api-Version:
+      - v2.12
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Debug:
+      - GxgiseknabMylU5MWbma1G8dn/6fVXI3hXaATlEkH4h8gINR8izYmVWPhqZScHFsFTuBUGoA8Y3dchwzJpxVDw==
+      Date:
+      - Wed, 11 Apr 2018 18:21:09 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '54'
+    body:
+      encoding: UTF-8
+      string: '{"name":"Open Graph Test User","id":"131637811018008"}'
+    http_version: 
+  recorded_at: Wed, 11 Apr 2018 18:21:09 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/me?access_token=EAAOBf4WLaNsBAB7bEJDkZANJ1GcuGBc5LkEXW7DYCeMimzzSADDw0o2Cv2yPLbeusI79Qlec2fuBtIZCoYGIZCZAP7IJvqj2lBblSxjpLqC2mY7imXhaEy43cPGD9KjHK56UKQuwJABKvm7GZA9KiwzQNWZAbQEd2gxR6er0uDZCNgJTC68f0zZAWxFsoZBpY0CDLAHgtKq7RRI9kl5ZCJ8aTwV4UHX5JRUejZBaRQr7QrqaQZDZD&appsecret_proof=0ebf54d6b21abd85a41fc8f928c731329de1142199eb14e472c74f25cd2e228e
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.14.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - '"90211aec91e09a418a1849691fb07d80a5c501e2"'
+      Strict-Transport-Security:
+      - max-age=15552000; preload
+      X-Fb-Trace-Id:
+      - Ev2Jq/LCT6Z
+      X-Fb-Rev:
+      - '3803187'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Facebook-Api-Version:
+      - v2.12
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fb-Debug:
+      - b2St35J1gANZd/zIgXLhI8y9m3rt0b3mP7qHDL0AHMGM8vBkVHV7ivyyMsT0yrinvzsNzpmCbYU/WVwiFrtSBw==
+      Date:
+      - Wed, 11 Apr 2018 18:21:10 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '54'
+    body:
+      encoding: UTF-8
+      string: '{"name":"Open Graph Test User","id":"131637811018008"}'
+    http_version: 
+  recorded_at: Wed, 11 Apr 2018 18:21:10 GMT
+recorded_with: VCR 4.0.0
