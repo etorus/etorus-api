@@ -5,10 +5,17 @@ class AuthenticateUser
   end
 
   def call
-    JsonWebToken.encode(user_id: user.id) if user
+    return payload if user
   end
 
   private
+
+  def payload
+    {
+      auth_token: JsonWebToken.encode(user_id: user.id),
+      user: user.attributes
+    }
+  end
 
   attr_reader :email, :password
 
