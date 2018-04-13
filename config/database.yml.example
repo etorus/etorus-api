@@ -9,9 +9,11 @@ default: &default
 development:
   <<: *default
   database: etorus_database_development
-  user:
+  username:
   password:
 
 test:
   <<: *default
   database: etorus_database_test
+  username:
+  password:
