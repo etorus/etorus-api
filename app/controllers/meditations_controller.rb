@@ -3,7 +3,7 @@ class MeditationsController < ApplicationController
     meditations = Meditation.includes(:user).public_sessions
 
     json_response(MeditationSerializer.new(
-      meditations, { meta: { total: meditations.size } }
+      meditations, { meta: { total: meditations.size }, include: [:user] }
     ).serializable_hash)
   end
 
