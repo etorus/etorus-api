@@ -11,13 +11,15 @@ class MeditationsController < ApplicationController
           include: [:user]
         })
         .serializable_hash
-      )
+    )
   end
 
   def show
     json_response(
       MeditationSerializer
-        .new(meditation)
+        .new(meditation, {
+          include: [:user]
+        })
         .serializable_hash
     )
   end
