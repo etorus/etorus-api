@@ -1,6 +1,8 @@
 class MeditationsController < ApplicationController
   def index
-    meditations = Meditation.includes(:user).public_sessions
+    meditations = Rails.cache.fetch("meditations/public", expires_in: 24.hours) do
+      Meditation.includes(:user).public_sessions
+    end
 
     json_response(
       MeditationSerializer
