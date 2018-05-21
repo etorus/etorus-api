@@ -12,12 +12,10 @@ gem 'puma', '~> 3.7'
 gem 'pg'
 gem 'fast_jsonapi'
 gem 'sidekiq'
-
+gem 'pusher'
 gem 'rack-cors'
-
 gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
-
 gem 'koala'
 
 group :development, :test do
