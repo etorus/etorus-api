@@ -26,6 +26,26 @@ class MeditationsController < ApplicationController
     )
   end
 
+  def enter
+    lobby = MeditationLobby.(
+      action: MeditationLobby::ENTER,
+      meditation_id: meditation.id,
+      user: current_user
+    )
+
+    json_response({ data: { lobby: lobby } })
+  end
+
+  def leave
+    lobby = MeditationLobby.(
+      action: MeditationLobby::LEAVE,
+      meditation_id: meditation.id,
+      user: current_user.id
+    )
+
+    json_response({ data: { lobby: lobby } })
+  end
+
   private
 
   def meditation

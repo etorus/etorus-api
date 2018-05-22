@@ -29,7 +29,8 @@ class MeditationSeed
       user: User.first,
       title: title,
       audio: 'meditation_for_life',
-      start: start
+      start: start,
+      lobby: [],
     )
   end
 end

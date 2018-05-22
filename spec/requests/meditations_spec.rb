@@ -29,7 +29,7 @@ RSpec.describe 'Meditations API', type: :request do
     end
 
     it 'returns an correct total' do
-      expect(json['data']['id']).to eq(meditations[0].id)
+      expect(json['data']['id']).to eq(meditations[0].id.to_s)
     end
   end
 end
