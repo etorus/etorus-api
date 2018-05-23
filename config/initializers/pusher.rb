@@ -1,8 +1,8 @@
 require 'pusher'
 
-Pusher.app_id = '529610'
-Pusher.key = '8fe0e77a83286d9b5e14'
-Pusher.secret = 'bf49e76834b5319edd0f'
+Pusher.app_id = ENV['APP_ID_PUSHER']
+Pusher.key = ENV['APP_KEY_PUSHER']
+Pusher.secret = ENV['SECRET_PUSHER']
 Pusher.cluster = 'us2'
 Pusher.logger = Rails.logger
 Pusher.encrypted = true

@@ -3,5 +3,10 @@ Rails.application.routes.draw do
   post 'auth/facebook', to: 'authentication#facebook'
   post 'signup', to: 'users#create'
 
-  resources :meditations
+  resources :meditations do
+    member do
+      get :enter
+      get :leave
+    end
+  end
 end

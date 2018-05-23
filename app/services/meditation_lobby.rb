@@ -19,14 +19,16 @@ class MeditationLobby
       user_id: user_id
     )
 
-    release_pusher
+    release_pusher(new_lobby)
     new_lobby
   end
 
   private
   attr_reader :action, :meditation_id, :user_id
 
-  def release_pusher
-    Pusher.trigger("MEDITATION_LOBBY/#{meditation_id}", 'session:bell')
+  def release_pusher(lobby)
+    Pusher.trigger("MEDITATION_LOBBY#{meditation_id}", 'session:bell', {
+      lobby: lobby
+    })
   end
 end

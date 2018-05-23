@@ -30,20 +30,20 @@ class MeditationsController < ApplicationController
     lobby = MeditationLobby.(
       action: MeditationLobby::ENTER,
       meditation_id: meditation.id,
-      user: current_user
+      user_id: current_user.id
     )
 
-    json_response({ data: { lobby: lobby } })
+    json_response({ data: lobby })
   end
 
   def leave
     lobby = MeditationLobby.(
       action: MeditationLobby::LEAVE,
       meditation_id: meditation.id,
-      user: current_user.id
+      user_id: current_user.id
     )
 
-    json_response({ data: { lobby: lobby } })
+    json_response({ data: lobby })
   end
 
   private

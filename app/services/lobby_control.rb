@@ -11,11 +11,8 @@ class LobbyControl
 
   def update_lobby
     session = meditation
-    current_lobby = updated_lobby(session.lobby)
-
-    session.update(
-      lobby: current_lobby
-    )
+    current_lobby = updated_lobby(session.lobby).map(&:to_s)
+    session.update(lobby: current_lobby)
 
     current_lobby
   end
@@ -31,11 +28,11 @@ class LobbyControl
   end
 
   def take_user(lobby)
-    (lobby || []) - [user_id]
+    (lobby || []) - [user_id.to_s]
   end
 
   def put_user(lobby)
-    (lobby || []) | [user_id]
+    (lobby || []) | [user_id.to_s]
   end
 
   def meditation
