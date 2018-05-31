@@ -3,8 +3,14 @@ class UsersController < ApplicationController
 
   def create
     user = User.create!(user_params)
-    auth_token = AuthenticateUser.new(user.email, user.password).call
-    response = { message: Message.account_created, auth_token: auth_token }
+    authenticate_user = AuthenticateUser.new(user.email, user.password).call
+
+    response = {
+      message: Message.account_created,
+      auth_token: authenticate_user[:auth_token],
+      user: UserSerializer.new(user).serializable_hash
+    }
+
     json_response(response, :created)
   end
 
@@ -15,7 +21,10 @@ class UsersController < ApplicationController
       :name,
       :email,
       :password,
-      :password_confirmation
+      :password_confirmation,
+      :facebook_id,
+      :avatar,
+      :phone,
     )
   end
 end
