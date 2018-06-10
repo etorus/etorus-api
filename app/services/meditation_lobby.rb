@@ -27,8 +27,9 @@ class MeditationLobby
   attr_reader :action, :meditation_id, :user_id
 
   def release_pusher(lobby)
-    Pusher.trigger("MEDITATION_LOBBY#{meditation_id}", 'session:bell', {
-      lobby: lobby
-    })
+    Pusher.trigger(
+      "MEDITATION_LOBBY#{meditation_id}", 'session:bell',
+      MeditationSerializer.new(Meditation.find(meditation_id)).serializable_hash
+    )
   end
 end

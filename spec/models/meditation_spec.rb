@@ -12,7 +12,7 @@ RSpec.describe Meditation, type: :model do
     let!(:private_meditations) { create_list :meditation, 1, session_public: false }
 
     it 'returns the public meditations' do
-      expect(described_class.public_sessions).to eq(public_meditations)
+      expect(described_class.public_sessions).to eq(public_meditations.reverse)
     end
   end
 end

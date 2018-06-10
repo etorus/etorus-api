@@ -33,7 +33,13 @@ class MeditationsController < ApplicationController
       user_id: current_user.id
     )
 
-    json_response({ data: lobby })
+    json_response(
+      MeditationSerializer
+        .new(meditation, {
+          include: [:user]
+        })
+        .serializable_hash
+    )
   end
 
   def leave
@@ -43,7 +49,13 @@ class MeditationsController < ApplicationController
       user_id: current_user.id
     )
 
-    json_response({ data: lobby })
+    json_response(
+      MeditationSerializer
+        .new(meditation, {
+          include: [:user]
+        })
+        .serializable_hash
+    )
   end
 
   private
