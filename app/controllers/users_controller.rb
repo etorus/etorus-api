@@ -14,10 +14,21 @@ class UsersController < ApplicationController
     json_response(response, :created)
   end
 
+  def update
+    current_user.update_attributes(user_params)
+
+    json_response(UserSerializer.new(current_user).serializable_hash)
+  end
+
+  def profile
+    json_response(UserSerializer.new(current_user).serializable_hash)
+  end
+
   private
 
   def user_params
     params.permit(
+      :id,
       :name,
       :email,
       :password,

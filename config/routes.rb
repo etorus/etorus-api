@@ -9,4 +9,10 @@ Rails.application.routes.draw do
       get :leave
     end
   end
+
+  resources :users, only: [:create, :update] do
+    collection do
+      get :profile
+    end
+  end
 end
