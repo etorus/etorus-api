@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180527212723) do
+ActiveRecord::Schema.define(version: 20180626144058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,17 @@ ActiveRecord::Schema.define(version: 20180527212723) do
     t.string "lobby", array: true
     t.index ["lobby"], name: "index_meditations_on_lobby", using: :gin
     t.index ["user_id"], name: "index_meditations_on_user_id"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "meditation_id"
+    t.string "translation_key"
+    t.string "uuid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["meditation_id"], name: "index_notifications_on_meditation_id"
+    t.index ["user_id"], name: "index_notifications_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
