@@ -3,10 +3,16 @@ Rails.application.routes.draw do
   post 'auth/facebook', to: 'authentication#facebook'
   post 'signup', to: 'users#create'
 
+  resources :notifications, only: [:create, :index]
+
   resources :meditations do
     member do
       get :enter
       get :leave
+    end
+
+    collection do
+      get :my
     end
   end
 

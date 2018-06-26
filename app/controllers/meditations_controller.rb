@@ -42,6 +42,21 @@ class MeditationsController < ApplicationController
     )
   end
 
+  def my
+    meditations = current_user.notifications.map(&:meditation)
+
+    json_response(
+      MeditationSerializer
+        .new(meditations, {
+          meta: {
+            total: meditations.size
+          },
+          include: [:user]
+        })
+        .serializable_hash
+    )
+  end
+
   def leave
     lobby = MeditationLobby.(
       action: MeditationLobby::LEAVE,
