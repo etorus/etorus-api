@@ -10,7 +10,9 @@ class NotificationsController < ApplicationController
   end
 
   def create
-    notification = Notification.create!(notification_params)
+    notification = Notification.create!(notification_params.merge({
+      user_id: current_user.id
+    }))
     response = NotificationSerializer.new(notification).serializable_hash
 
     json_response(response, :created)
@@ -21,7 +23,6 @@ class NotificationsController < ApplicationController
   def notification_params
     params.permit(
       :uuid,
-      :user_id,
       :meditation_id,
       :translation_key
     )
