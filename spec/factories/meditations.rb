@@ -4,6 +4,7 @@ FactoryBot.define do
     start          { Faker::Time.forward(1, :morning) }
     audio          'audio_pt'
     session_public true
+    lobby          { [] }
 
     user
   end
