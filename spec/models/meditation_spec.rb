@@ -8,7 +8,7 @@ RSpec.describe Meditation, type: :model do
   it { should validate_presence_of(:audio) }
   it { should validate_presence_of(:start) }
 
-  describe '.public' do
+  describe '.public_sessions' do
     let(:public_meditations) { create_list :meditation, 2 }
     let!(:private_meditations) { create_list :meditation, 1, session_public: false }
 
@@ -18,6 +18,15 @@ RSpec.describe Meditation, type: :model do
           x.start <=> y.start
         }
       )
+    end
+  end
+
+  describe '.actual_sessions' do
+    let!(:past_meditations) { create_list :meditation, 2, start: (Time.now - 2.days) }
+    let!(:actual_meditations) { create_list :meditation, 1 }
+
+    it 'returns the actual meditations' do
+      expect(described_class.actual_sessions).to eq(actual_meditations)
     end
   end
 end

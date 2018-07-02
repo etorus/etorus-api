@@ -7,4 +7,7 @@ class Meditation < ApplicationRecord
   default_scope { order(start: :asc) }
 
   scope :public_sessions, -> { where(session_public: true) }
+  scope :actual_sessions, -> {
+    where(start: Time.now..(Time.now.midnight + 4.days))
+  }
 end
