@@ -21,4 +21,20 @@ Rails.application.routes.draw do
       get :profile
     end
   end
+
+  resources :passwords, only: [] do
+    collection do
+      post :reset
+    end
+  end
+
+
+  namespace :pages do
+    resources :passwords, only: [] do
+      collection do
+        put :update
+        get :recovery
+      end
+    end
+  end
 end
