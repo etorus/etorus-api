@@ -1,3 +1,17 @@
 <div>
-  <h1>TESTE</h1>
+  <h1>Reset password</h1>
+
+  <%= form_for @user, url: pages_passwords_path, local: true, method: :put do |form| %>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation %>
+
+    <%= form.submit %>
+  <% end %>
 </div>

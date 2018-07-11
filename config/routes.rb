@@ -30,11 +30,9 @@ Rails.application.routes.draw do
 
 
   namespace :pages do
-    resources :passwords, only: [] do
-      collection do
-        put :update
-        get :recovery
-      end
+    resource :passwords, only: [] do
+      put :update
+      get :recovery
     end
   end
 end
