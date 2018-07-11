@@ -1,5 +1,5 @@
-<h1>Password Recovery of <%= @user.name %></h1>
+<h1>Reset password for <%= @user.name %></h1>
+
 <p>
-  Just follow this link: <%= recovery_pages_passwords_url(id: @token) %>,
-  to reset your password
+  Just follow <%= link_to 'this link', recovery_pages_passwords_url(token: @token) %> to reset your password
 </p>
