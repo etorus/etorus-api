@@ -1,0 +1,12 @@
+language: ruby
+cache: bundler
+rvm:
+  - 2.5.0
+addons:
+  postgresql: 9.6
+before_script:
+  - cp .env.example .env
+  - cp config/database.yml.example config/database.yml
+  - bundle exec rake db:create db:migrate
+script:
+  - xvfb-run bundle exec rspec

@@ -15,5 +15,3 @@ development:
 test:
   <<: *default
   database: etorus_database_test
-  username:
-  password:
