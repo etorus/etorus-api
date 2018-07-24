@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    current_user.update_attributes(user_params)
+    current_user.update_attributes!(user_params)
 
     json_response(UserSerializer.new(current_user).serializable_hash)
   end

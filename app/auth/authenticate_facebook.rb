@@ -5,6 +5,8 @@ class AuthenticateFacebook
 
   def call
     return payload if user
+
+    raise(ExceptionHandler::AuthenticationError, Message.invalid_credentials)
   end
 
   private

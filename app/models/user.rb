@@ -4,7 +4,8 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  validates_presence_of :name, :email, :password_digest, :password,
-    :password_confirmation
-  validates_uniqueness_of :email, :facebook_id
+  validates_presence_of :password, :password_confirmation, on: :create
+  validates_presence_of :name, :email, :password_digest
+  validates_uniqueness_of :email
+  validates_uniqueness_of :facebook_id, allow_blank: true
 end
