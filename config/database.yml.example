@@ -4,13 +4,11 @@ default: &default
   timeout: 5000
   host: localhost
   port: 5432
-    
  development:
   <<: *default
   database: etorus_database_development
   username:
   password:
-
  test:
   <<: *default
   database: etorus_database_test
