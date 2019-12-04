@@ -3,14 +3,12 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
   host: localhost
-  port: 5432
-    
- development:
+port: 5432
+development:
   <<: *default
   database: etorus_database_development
   username:
   password:
-
- test:
+test:
   <<: *default
   database: etorus_database_test
