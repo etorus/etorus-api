@@ -8,7 +8,7 @@ end
 ruby '2.5.0'
 
 gem 'rails', '~> 5.1.5'
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 4.3'
 gem 'pg'
 gem 'fast_jsonapi'
 gem 'sidekiq'
